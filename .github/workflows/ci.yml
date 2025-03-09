@@ -15,11 +15,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Install platform deps for clr
+        run: sudo apt install libasound2-dev
       - name: Rust cache
         uses: Swatinem/rust-cache@v2
-      - name: Install platform deps for clr
-        run: |
-          sudo apt install libasound2-dev
+        with:
+          workspaces: ${{ matrix.project }}
       - name: Format
         run: cargo fmt --all --manifest-path ${{ matrix.project }}/Cargo.toml
       - name: Build
