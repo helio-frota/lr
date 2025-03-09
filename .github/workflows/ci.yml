@@ -20,6 +20,8 @@ jobs:
       - name: Install platform deps for clr
         run: |
           sudo apt install libasound2-dev
+      - name: Format
+        run: cargo fmt --all --manifest-path ${{ matrix.project }}/Cargo.toml
       - name: Build
         run: cargo check --manifest-path ${{ matrix.project }}/Cargo.toml
       - name: Test

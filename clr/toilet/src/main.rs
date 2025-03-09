@@ -1,7 +1,7 @@
 use std::{fs::File, io::BufReader};
 
 use anyhow::Result;
-use rodio::{source::Source, Decoder, OutputStream, OutputStreamHandle};
+use rodio::{Decoder, OutputStream, OutputStreamHandle, source::Source};
 
 enum Intensity {
     Small(String),
