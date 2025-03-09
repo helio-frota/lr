@@ -1,0 +1,28 @@
+[workspace]
+resolver = "3"
+members = [
+    "bobblehead",
+    "clr",
+    "common",
+    "gato",
+    "rvrs",
+    "toilet",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[workspace.dependencies]
+anyhow = { version = "1", default-features = false }
+assert_cmd = { version = "2", default-features = false }
+clap = { version = "4", default-features = false, features = ["std"] }
+common = { path = "common" }
+emojis = { version = "0.6.4", default-features = false }
+figleter = { version = "0.2.2", default-features = false }
+predicates = { version = "3", default-features = false }
+pretty_assertions = { version = "1", default-features = false }
+rodio = { version = "0.20.1", default-features = false }
+
+
