@@ -1,0 +1,33 @@
+name: ci
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: Swatinem/rust-cache@v2
+        with:
+          cache-all-crates: "true"
+      - name: Install platform deps
+        run: |
+          sudo apt install libasound2-dev
+      - uses: taiki-e/install-action@cargo-llvm-cov
+      - run: |
+          cargo clippy --all-targets --all-features -- -D warnings -D clippy::unwrap_used -D clippy::expect_used
+          cargo llvm-cov test | tee cov.txt
+          echo "COVERAGE=$(cat cov.txt | grep "TOTAL" | awk '{print $4}' | sed 's/%//g')" >> $GITHUB_ENV
+      - name: cov-badge
+        uses: schneegans/dynamic-badges-action@v1.7.0
+        with:
+          auth: ${{ secrets.THEBADGE }}
+          gistID: d86fe4168b61872f7e63d85ce3c9fea6
+          filename: cov.json
+          label: coverage
+          message: ${{env.COVERAGE}}%
+          valColorRange: ${{env.COVERAGE}}
+          minColorRange: 50
+          maxColorRange: 80

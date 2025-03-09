@@ -1,0 +1,21 @@
+[package]
+name = "clr"
+version.workspace = true
+edition.workspace = true
+
+[dev-dependencies]
+anyhow = { workspace = true }
+assert_cmd = { workspace = true }
+pretty_assertions = { workspace = true }
+
+[[bin]]
+name = "false"
+path = "src/bin/false.rs"
+
+[[bin]]
+name = "true"
+path = "src/bin/true.rs"
+
+[[bin]]
+name = "clr"
+path = "src/main.rs"

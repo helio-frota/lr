@@ -1,0 +1,43 @@
+[package]
+name = "async-stuff"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+
+[[bin]]
+name = "one"
+path = "src/bin/1.rs"
+
+[[bin]]
+name = "two"
+path = "src/bin/2.rs"
+
+[[bin]]
+name = "three"
+path = "src/bin/3.rs"
+
+[[bin]]
+name = "four"
+path = "src/bin/4.rs"
+
+[[bin]]
+name = "five"
+path = "src/bin/5.rs"
+
+[[bin]]
+name = "six"
+path = "src/bin/6.rs"
+
+[[bin]]
+name = "seven"
+path = "src/bin/7.rs"
+
+[[bin]]
+name = "eight"
+path = "src/bin/8.rs"
+
+[[bin]]
+name = "nine"
+path = "src/bin/9.rs"
