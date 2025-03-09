@@ -5,7 +5,7 @@
 
 ## Calling lua scripts from rust
 
-```fish
+```shell
 cargo run
 cargo run --bin basic_types
 cargo run --bin string_and_format
