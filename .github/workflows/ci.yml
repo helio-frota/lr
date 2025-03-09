@@ -3,13 +3,14 @@ on:
   push:
     branches:
       - main
-    paths:
-      - clr
+    # paths:
+    #   - clr
   pull_request:
     branches:
       - main
-    paths:
-      - clr
+    # paths:
+    #   - clr
+
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
