@@ -26,8 +26,8 @@ fn main() {
     let args_reversed: String = args.chars().rev().collect();
 
     if matches.get_flag("nonewline") {
-        print!("{}", args_reversed);
+        print!("{args_reversed}");
     } else {
-        println!("{}", args_reversed);
+        println!("{args_reversed}");
     }
 }
