@@ -117,10 +117,10 @@ pub fn report(similar_blocks: Vec<(String, String, f64)>) -> String {
             let mut block = String::new();
 
             if s.2 == 1.0 {
-                block.push_str(format!("### \u{1F980} {}\n\n", exact_idx).as_str());
+                block.push_str(format!("### \u{1F980} {exact_idx}\n\n").as_str());
                 exact_idx += 1;
             } else {
-                block.push_str(format!("### \u{1F980} {}\n\n", almost_idx).as_str());
+                block.push_str(format!("### \u{1F980} {almost_idx}\n\n").as_str());
                 almost_idx += 1;
             }
 
