@@ -18,7 +18,7 @@ fn clr_again() {
     let out = cmd.output().expect("fail");
     assert!(out.status.success());
     let stdout = String::from_utf8(out.stdout).expect("invalid utf-8");
-    assert_eq!(stdout, "Hello, world!\n");
+    assert_eq!("Hello, world!\n", stdout);
 }
 
 #[test]
@@ -28,7 +28,7 @@ fn clr_again_with_file() -> Result<()> {
     let mut cmd = Command::cargo_bin(COMMAND)?;
     let out = cmd.output()?;
     let stdout = String::from_utf8(out.stdout).expect("invalid utf-8");
-    assert_eq!(stdout, expected);
+    assert_eq!(expected, stdout);
 
     Ok(())
 }
@@ -40,7 +40,7 @@ fn clr_again_with_file_without_anyhow() {
     let mut cmd = Command::cargo_bin(COMMAND).unwrap();
     let out = cmd.output().unwrap();
     let stdout = String::from_utf8(out.stdout).expect("invalid utf-8");
-    assert_eq!(stdout, expected);
+    assert_eq!(expected, stdout);
 }
 
 #[test]

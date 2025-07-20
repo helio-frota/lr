@@ -4,8 +4,8 @@ use std::path::PathBuf;
 use strsim::sorensen_dice;
 use walkdir::WalkDir;
 
-/// This function gets all the .rs files from a directory, and returns a
-/// vector with all the paths of the .rs files.
+/// This function gets all the `.rs` files from a directory, and returns a
+/// vector with all the paths of the `.rs` files.
 pub fn rust_files(dir: &str, ignore: &str) -> Result<Vec<PathBuf>, io::Error> {
     let ignore_list: Vec<&str> = ignore.split(',').collect();
     let files = WalkDir::new(dir)
@@ -63,8 +63,10 @@ pub fn code_blocks(content: &str) -> Vec<String> {
     code_blocks
 }
 
-// This counts lines and chars from code-block
-// to make opinionated checks later.
+/*
+This counts lines and chars from code-block
+to make opinionated checks later.
+*/
 pub fn block_counter(cb: &str) -> (u16, u8) {
     let mut chars = 0;
     let mut lines = 0;

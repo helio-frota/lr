@@ -14,8 +14,10 @@ struct Args {
     file: String,
 }
 
-// the first 5 words are transformed into figlets and the next
-// line is normal text. contains bugs and not 100%
+/*
+the first 5 words are transformed into figlets and the next
+line is normal text. Contains bugs and not 100%
+*/
 fn run(args: Args) -> Result<(), Box<dyn std::error::Error>> {
     let standard_font = FIGfont::standard()?;
     match open(&args.file) {
